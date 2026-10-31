@@ -58,6 +58,11 @@ if ( !class_exists('phpFlickr') ) {
 		 */
 		var $max_cache_rows = 1000;
 
+		// PHP 8 ignores PHP 4-style constructors; delegate so the API key actually gets set
+		function __construct ($api_key, $secret = NULL, $die_on_error = false) {
+			$this->phpFlickr($api_key, $secret, $die_on_error);
+		}
+
 		function phpFlickr ($api_key, $secret = NULL, $die_on_error = false) {
 			//The API Key must be set before any calls can be made.  You can
 			//get your own at https://www.flickr.com/services/api/misc.api_keys.html
@@ -1688,6 +1693,10 @@ if ( !class_exists('phpFlickr_pager') ) {
 		var $phpFlickr, $per_page, $method, $args, $results, $global_phpFlickr;
 		var $total = null, $page = 0, $pages = null, $photos, $_extra = null;
 
+
+		function __construct ($phpFlickr, $method = null, $args = null, $per_page = 30) {
+			$this->phpFlickr_pager($phpFlickr, $method, $args, $per_page);
+		}
 
 		function phpFlickr_pager($phpFlickr, $method = null, $args = null, $per_page = 30) {
 			$this->per_page = $per_page;
