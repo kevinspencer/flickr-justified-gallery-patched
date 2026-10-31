@@ -124,6 +124,7 @@ function fjgwpp_settings() {
 	
 	//Save Values
 	if (isset($_POST['Submit'])) {
+		check_admin_referer('fjgwpp_settings_save', 'fjgwpp_nonce');
 
 		$error = false;
 		$error_msg = "";
@@ -355,6 +356,7 @@ function fjgwpp_settings() {
 				<div class="inside">
 
 					<form method="post" name="options" target="_self">
+						<?php wp_nonce_field('fjgwpp_settings_save', 'fjgwpp_nonce'); ?>
 						<h4><?php _e('Global Settings', 'fjgwpp' ); ?></h4>
 
 						<table class="form-table">
