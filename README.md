@@ -31,10 +31,6 @@ PHP 8 prints some deprecation notices from the bundled phpFlickr wrappers (optio
 
 Replace the contents of `wp-content/plugins/flickr-justified-gallery/` with the contents of this repo, keeping that directory name. Your existing settings and shortcodes keep working. After updating, open **Settings → Flickr Justified Gallery** and save once to confirm your API key validates.
 
-Two cautions:
-- Don't copy `.git/` into a public web root. For example, use `rsync -a --exclude .git`.
-- wordpress.org won't offer updates for this plugin, so nothing will overwrite your copy. That also means nobody else is patching it.
-
 ## License
 
 GPLv3 or later, the same as the original plugin. See [COPYING](COPYING). The original plugin is by Miro Mannino. The bundled [phpFlickr](https://github.com/dancoulter/phpflickr) is by Dan Coulter, also GPLv3.
