@@ -22,7 +22,8 @@ The reflected XSS in older versions ([CVE-2015-9327](https://www.wordfence.com/t
 
 ## Tested with
 
-- WordPress 6.9.11
+- WordPress 6.9.x
+- Wordpress 7.1x
 - PHP 8.2
 
 PHP 8 prints some deprecation notices from the bundled phpFlickr wrappers (optional parameters declared before required ones). They are harmless.
